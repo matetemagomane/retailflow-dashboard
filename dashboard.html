@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailFlow | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <header class="analytics-row">
+            <div class="metric-card">
+                <span class="metric-title">Total Inventory Value</span>
+                <h3 id="stat-total-value">R0.00</h3>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">Total Items Stocked</span>
+                <h3 id="stat-total-count">0</h3>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">Electronics Count</span>
+                <h3 id="stat-electronics-count">0</h3>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">Clothing Count</span>
+                <h3 id="stat-clothing-count">0</h3>
+            </div>
+        </header>
+
+        <main class="workspace-layout">
+
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>Add New Product</h2>
+                    <p>Enter details below to update the system.</p>
+                </div>
+
+                <form id="productForm">
+                    <div class="input-group">
+                        <label for="productId">Product ID</label>
+                        <input type="number" id="productId" placeholder="e.g., 101" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" placeholder="e.g., Wireless Mouse" required>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="productPrice">Price (ZAR)</label>
+                            <input type="number" id="productPrice" placeholder="0.00" step="0.01" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="productQuantity">Stock Quantity</label>
+                            <input type="number" id="productQuantity" placeholder="0" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group category-selector">
+                        <label for="productCategory">Select Category</label>
+                        <select id="productCategory" required>
+                            <option value="" disabled selected>-- Choose Type --</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                        </select>
+                    </div>
+
+                    <div id="electronics-fields" class="input-group dynamic-field hidden">
+                        <label for="warrantyMonths">Warranty Period (Months)</label>
+                        <input type="number" id="warrantyMonths" placeholder="e.g., 24">
+                    </div>
+
+                    <div id="clothing-fields" class="input-group dynamic-field hidden">
+                        <label>Select Size</label>
+                        <div class="size-options">
+                            <label class="size-btn"><input type="radio" name="size" value="S"> S</label>
+                            <label class="size-btn"><input type="radio" name="size" value="M"> M</label>
+                            <label class="size-btn"><input type="radio" name="size" value="L"> L</label>
+                            <label class="size-btn"><input type="radio" name="size" value="XL"> XL</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Save Product</button>
+                </form>
+            </div>
+
+            <div class="table-card">
+                <div class="card-header">
+                    <h2>Current Inventory</h2>
+                    <p>Live database tracking items and variations.</p>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Specific Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

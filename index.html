@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailFlow | Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-wrapper">
+        <div class="brand-hero">
+            <h1>Retail<span>Flow</span></h1>
+            <p>Enterprise Inventory & Analytics Engine</p>
+        </div>
+
+        <div class="login-card">
+            <div class="login-header">
+                <h2>System Authentication</h2>
+                <p>Authorized personnel login access only.</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="e.g., manager_admin" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Authenticate System</button>
+            </form>
+
+            <div class="login-footer">
+                <p>Powered by Framework Studio</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quick immediate redirect simulation for login mechanics
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
